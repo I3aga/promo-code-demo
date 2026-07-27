@@ -30,8 +30,6 @@ function createPromoCodeField() {
         body: JSON.stringify({ code: input.value }),
       });
 
-      // fetch не бросает исключение на HTTP-ошибках, поэтому 422 сюда доходит,
-      // мы сами превращаем его в throw...
       if (!res.ok) {
         throw new Error('promo request failed');
       }
@@ -40,8 +38,6 @@ function createPromoCodeField() {
       root.dataset.discount = String(data.discount);
       return data;
     } catch (e) {
-      // ...и тут же молча его проглатываем.
-      // БАГ: при неверном промокоде (422) пользователь не видит вообще ничего.
     }
   }
 
