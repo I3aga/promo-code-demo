@@ -1,6 +1,5 @@
 const { createPromoCodeField } = require('../PromoCodeField');
 
-// Мок ответа fetch: fetch resolve-ится даже на 4xx, поэтому res.ok = false.
 function mockFetchResponse({ ok, status, body }) {
   return Promise.resolve({
     ok,
@@ -24,7 +23,6 @@ describe('PromoCodeField', () => {
     field.input.value = 'WRONG';
     await field.apply();
 
-    // Этот assert падает на текущем коде: слот пустой, ошибка проглочена.
     expect(field.errorSlot.textContent).toMatch(/неверный промокод/i);
   });
 
