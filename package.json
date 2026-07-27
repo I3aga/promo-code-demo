@@ -1,0 +1,16 @@
+{
+  "name": "promo-code-demo",
+  "version": "1.0.0",
+  "description": "Демо-репозиторий для статьи про Devin AI: поле промокода с плановым багом",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+}
